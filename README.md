@@ -2,14 +2,15 @@
 
 PyTorch Implementation of [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf) and [Semi-Supervised GAN](https://arxiv.org/abs/1606.01583) for Domain Transfer.
 
-![alt text](gif/cyclegan.png)
-
-
 ## Prerequites
 * [Python 3.5](https://www.continuum.io/downloads)
 * [PyTorch 0.1.12](http://pytorch.org/)
 
+## Potential bugs
 
+### The python code does not fully use the GPU when it is running,
+### potential misoptimization with cuda() is suspected
+### any help would be grateful
 <br>
 
 ## Usage
