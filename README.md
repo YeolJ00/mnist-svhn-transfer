@@ -19,6 +19,7 @@ PyTorch Implementation of [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf) and [
 #### Clone the repository
 
 https://visualstudio.github.com/
+<br>
 https://docs.microsoft.com/en-us/visualstudio/python/quickstart-03-python-in-visual-studio-project-from-repository?view=vs-2019
 ```
 Click View -> Team Viewer and Connect to Github
