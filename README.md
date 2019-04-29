@@ -14,6 +14,31 @@ PyTorch Implementation of [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf) and [
 
 ## Usage
 
+### For Visual Studio
+#### Clone the repository
+
+https://visualstudio.github.com/
+https://docs.microsoft.com/en-us/visualstudio/python/quickstart-03-python-in-visual-studio-project-from-repository?view=vs-2019
+```
+Click View -> Team Viewer and Connect to Github
+Clone repository
+```
+#### Download svhm data
+$C:\Users\User\source\repos\project_name\mnist-svhn-transfer\
+create new folders mnist and svhn
+```
+http://ufldl.stanford.edu/housenumbers/train_32x32.mat
+http://ufldl.stanford.edu/housenumbers/test_32x32.mat
+http://ufldl.stanford.edu/housenumbers/extra_32x32.mat
+```
+and copy them to the svhn folder
+#### Execute code
+```
+cd source/repos/project_name/mnist-svhn-transfer
+python main.py --use_labels=False --use_reconst_loss=True
+```
+
+### For Linux or Mac users
 #### Clone the repository
 
 ```bash
