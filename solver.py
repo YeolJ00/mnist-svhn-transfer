@@ -48,15 +48,15 @@ class Solver(object):
         g_params = list(self.g12.parameters()) + list(self.g21.parameters())
         d_params = list(self.d1.parameters()) + list(self.d2.parameters())
         
-        self.g_optimizer = optim.Adam(g_params, self.lr, [self.beta1, self.beta2])
-        self.d_optimizer = optim.Adam(d_params, self.lr, [self.beta1, self.beta2])
-        
         if torch.cuda.is_available():
             self.g12.cuda()
             self.g21.cuda()
             self.d1.cuda()
             self.d2.cuda()
     
+        self.g_optimizer = optim.Adam(g_params, self.lr, [self.beta1, self.beta2])
+        self.d_optimizer = optim.Adam(d_params, self.lr, [self.beta1, self.beta2])
+        
     def merge_images(self, sources, targets, k=10):
         _, _, h, w = sources.shape
         row = int(np.sqrt(self.batch_size))
@@ -195,8 +195,8 @@ class Solver(object):
             if (step+1) % self.log_step == 0:
                 print('Step [%d/%d], d_real_loss: %.4f, d_mnist_loss: %.4f, d_svhn_loss: %.4f, '
                       'd_fake_loss: %.4f, g_loss: %.4f' 
-                      %(step+1, self.train_iters, d_real_loss.data[0], d_mnist_loss.data[0], 
-                        d_svhn_loss.data[0], d_fake_loss.data[0], g_loss.data[0]))
+                      %(step+1, self.train_iters, d_real_loss.data.item(), d_mnist_loss.data.item(), 
+                        d_svhn_loss.data.item(), d_fake_loss.data.item(), g_loss.data.item()))
 
             # save the sampled images
             if (step+1) % self.sample_step == 0:

@@ -1,5 +1,6 @@
 import argparse
 import os
+import torch
 from solver import Solver
 from torch.backends import cudnn
 from data_loader import get_loader
@@ -11,7 +12,8 @@ def main(config):
     svhn_loader, mnist_loader = get_loader(config)
     
     solver = Solver(config, svhn_loader, mnist_loader)
-    cudnn.benchmark = True 
+    cudnn.benchmark = True
+    print('Cuda availability: ',torch.cuda.is_available())
     
     # create directories if not exist
     if not os.path.exists(config.model_path):
