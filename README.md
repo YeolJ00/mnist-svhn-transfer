@@ -8,9 +8,28 @@ PyTorch Implementation of [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf) and [
 
 ## Potential bugs
 
-### The python code does not fully use the GPU when it is running,
-### potential misoptimization with cuda() is suspected
-### any help would be grateful
+#### The python code does not fully use the GPU when it is running,
+#### potential misoptimization with cuda() is suspected
+#### any help would be grateful
+
+<br>
+
+## Changes from the original code
+#### torch.nn.functional.tanh will be deprecated
+```
+used torch.tanh instead
+```
+
+#### Divided transform in data_loader.py det_loader into two distinguished formats transform3 and transform2
+```
+data_loader.py had a single tranform format in get_loader() that normalizes a 3 channel image
+MNIST data is not a 3 channel image thus requires a seperate transform format
+```
+#### Corrected wrong usage of [0] indexing of a single value
+```
+used .item() instead
+```
+
 <br>
 
 ## Usage
