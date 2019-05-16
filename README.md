@@ -96,11 +96,6 @@ From SVHN to MNIST            |  From MNIST to SVHN
 ![alt text](gif/cycle-s-m.gif)  |  ![alt text](gif/cycle-m-s.gif)
 ![alt text](gif/cycle-s-m.png)  |  ![alt text](gif/cycle-m-s.png)
 
-#### 2) SGAN
-From SVHN to MNIST            |  From MNIST to SVHN
-:-------------------------:|:-------------------------:
-![alt text](gif/sgan-s-m.gif)  |  ![alt text](gif/sgan-m-s.gif)
-![alt text](gif/sgan-s-m.png)  |  ![alt text](gif/sgan-m-s.png)
 
 
 
